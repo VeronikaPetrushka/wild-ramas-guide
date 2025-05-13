@@ -10,7 +10,7 @@ workflows:
         distribution_type: app_store
         bundle_identifier: com.wildRamasGuide2025
       vars:
-        APP_STORE_APPLE_ID: 6745454322 #change
+        APP_STORE_APPLE_ID: 6745820274
         BUNDLE_ID: 'com.wildRamasGuide2025'
         XCODE_WORKSPACE: 'WildRamasGuide.xcworkspace'
         XCODE_SCHEME: 'WildRamasGuide'

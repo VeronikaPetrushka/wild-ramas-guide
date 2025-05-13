@@ -47,7 +47,7 @@ const WildSettings = () => {
 
             <View style={wildStyles.wildBtn}>
                 <Text style={wildStyles.wildBtnText}>Privacy Policy</Text>
-                <TouchableOpacity onPress={() => Linking.openURL('https://www.termsfeed.com')}>
+                <TouchableOpacity onPress={() => Linking.openURL('https://www.termsfeed.com/live/b14a6654-3d26-4666-b4a5-6178443b461e')}>
                     <Image
                         source={require('../WildRamasAssetsApp/wildIconsGuide/wildSetArrow.png')}
                         style={{width: 7, height: 13, resizeMode: 'contain'}}

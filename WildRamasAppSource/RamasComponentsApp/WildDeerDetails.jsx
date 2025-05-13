@@ -86,13 +86,13 @@ const WildDeerDetails = ({ deer }) => {
                     ))
                 }
 
-                <View style={{marginTop: 10, alignItems: 'center'}}>
-                    <Image
-                        source={require('../WildRamasAssetsApp/wildRamasDecorGuide/deerCitation.png')}
-                        style={{width: 318, height: 315, resizeMode: 'contain'}}
-                    />
+                <View style={wildStyles.citationContainer}>
                     <Text style={wildStyles.deerCitation}>{deer.citation}</Text>
                 </View>
+                <Image
+                    source={require('../WildRamasAssetsApp/wildRamasDecorGuide/WildQuizDeer.png')}
+                    style={{width: 318, height: 315, resizeMode: 'contain'}}
+                />
 
                 <TouchableOpacity
                     style={[wildStyles.studiedBtn, isStudied && {backgroundColor: '#7B7B7B'}]}
@@ -175,15 +175,21 @@ const wildStyles = StyleSheet.create({
         marginBottom: 5
     },
 
+    citationContainer: {
+        width: 254,
+        backgroundColor: '#fff',
+        borderRadius: 22,
+        padding: 10,
+        zIndex: 10,
+        marginTop: 10,
+        alignSelf: 'flex-end'
+    },
+
     deerCitation: {
         fontSize: 12,
         fontWeight: '500',
         lineHeight: 18,
         color: '#000',
-        width: 234,
-        position: 'absolute',
-        top: 12,
-        right: 30
     },
 
     studiedBtn: {

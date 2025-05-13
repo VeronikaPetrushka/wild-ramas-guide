@@ -57,11 +57,13 @@ const CreateWildJournal = ({ journal }) => {
             const stored = await AsyncStorage.getItem('WILD_JOURNALS');
             const existingJournals = stored ? JSON.parse(stored) : [];
 
+            const cleanedImages = images.filter(uri => uri); 
+
             const updatedJournal = {
                 id: journal?.id || Date.now(),
                 date: formattedDate,
                 title,
-                images,
+                images: cleanedImages,
                 mark: selectedMark,
                 notes,
                 weather: selectedWeather
@@ -79,7 +81,7 @@ const CreateWildJournal = ({ journal }) => {
         } catch (e) {
             Alert.alert('Error', 'Failed to save journal');
         }
-        };
+    };
     
     return (
         <View style={{ flex: 1 }}>
@@ -147,7 +149,7 @@ const CreateWildJournal = ({ journal }) => {
                                         ) : (
                                         <Image
                                             source={require('../WildRamasAssetsApp/wildRamasDecorGuide/journalImageHolder.png')}
-                                            style={{ width: 24, height: 24, resizeMode: 'contain' }}
+                                            style={{ width: 72, height: 76, resizeMode: 'contain' }}
                                     />
                                     )}
                                 </TouchableOpacity>

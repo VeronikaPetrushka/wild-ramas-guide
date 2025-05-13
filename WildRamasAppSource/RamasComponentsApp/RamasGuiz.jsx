@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Image, TouchableOpacity, Dimensions, StyleSheet } from "react-native";
+import { View, Text, Image, TouchableOpacity, Dimensions, StyleSheet, ScrollView } from "react-native";
 import GuideNavigation from '../WildHelpersApp/GuideNavigation';
 import { ramasQuizInfo, ramasQuizResults } from '../GuideConstantsApp/ramasQuizInfo';
 
@@ -44,7 +44,7 @@ const RamasQuiz = () => {
                         flexGrow: 1,
                         justifyContent: 'space-between',
                         alignItems: 'center',
-                        paddingBottom: 170
+                        paddingBottom: height * 0.17
                     }}>
                         <Image
                             source={require('../WildRamasAssetsApp/wildRamasDecorGuide/wildQuizTitle.png')}
@@ -60,11 +60,11 @@ const RamasQuiz = () => {
                             source={require('../WildRamasAssetsApp/wildRamasDecorGuide/WildQuizDeer.png')}
                             style={{
                                 width: '100%',
-                                height: 342,
+                                height: height * 0.35,
                                 resizeMode: 'contain',
                                 position: 'absolute',
                                 right: -50,
-                                bottom: 200
+                                bottom: height * 0.2
                             }}
                         />
                         <TouchableOpacity onPress={() => setWildStart(true)}>
@@ -202,7 +202,7 @@ const RamasQuiz = () => {
                                     height: height * 0.09,
                                     resizeMode: 'contain',
                                     alignSelf: 'center',
-                                    marginTop: height * 0.1
+                                    marginTop: height * 0.07
                                 }}
                             />
                         </TouchableOpacity>
@@ -212,80 +212,83 @@ const RamasQuiz = () => {
 
             {
                 (wildStart && !wildFinish && wildResultVisible) && (
-                    <View style={{width: '100%', height: '100%', paddingHorizontal: 20}}>
+                    <View style={{ width: '100%', height: '100%', paddingHorizontal: 20 }}>
+                        <ScrollView style={{ width: '100%' }}>
+                            
+                            <TouchableOpacity
+                                style={{alignSelf: 'flex-end'}}
+                                onPress={leaveWildQuiz}
+                            >
+                                <Image
+                                    source={require('../WildRamasAssetsApp/wildRamasDecorGuide/wildQuizLeaveBtn.png')}
+                                    style={{
+                                        width: height * 0.045,
+                                        height: height * 0.045,
+                                        resizeMode: 'contain',                                    
+                                        zIndex: 10,
+                                        marginBottom: 18
+                                    }}
+                                />
+                            </TouchableOpacity>
 
-                        <TouchableOpacity
-                            style={{alignSelf: 'flex-end'}}
-                            onPress={leaveWildQuiz}
-                        >
-                            <Image
-                                source={require('../WildRamasAssetsApp/wildRamasDecorGuide/wildQuizLeaveBtn.png')}
-                                style={{
-                                    width: height * 0.045,
-                                    height: height * 0.045,
-                                    resizeMode: 'contain',                                    
-                                    zIndex: 10,
-                                    marginBottom: 18
-                                }}
-                            />
-                        </TouchableOpacity>
+                            {
+                                ramasQuizResults.some((k) => k.key === seletedWildOption.key) && (
+                                    <View style={{width: '100%'}}>
+                                        <View style={[wildStyles.finishTextContainer,
+                                            { backgroundColor: '#242424', marginBottom: 18 }]}
+                                        >
+                                            <Text style={wildStyles.finishTextTitle}>
+                                                {ramasQuizResults.find((k) => k.key === seletedWildOption.key)?.key}
+                                            </Text>
+                                            <Text style={wildStyles.finishTextSubTitle}>
+                                                Animal relatives in spirit
+                                            </Text>
+                                            {
+                                                ramasQuizResults.find((k) => k.key === seletedWildOption.key)?.animalRelatives.map((text, idx) => (
+                                                    <Text key={idx} style={wildStyles.finishTextWhite}>  {`\u2022`}  {text}</Text>
+                                                ))
+                                            }
+                                        </View>
 
-                        {
-                            ramasQuizResults.some((k) => k.key === seletedWildOption.key) && (
-                                <View style={{width: '100%'}}>
-                                    <View style={[wildStyles.finishTextContainer,
-                                        { backgroundColor: '#242424', marginBottom: 18 }]}
-                                    >
-                                        <Text style={wildStyles.finishTextTitle}>
-                                            {ramasQuizResults.find((k) => k.key === seletedWildOption.key)?.key}
-                                        </Text>
-                                        <Text style={wildStyles.finishTextSubTitle}>
-                                            Animal relatives in spirit
-                                        </Text>
-                                        {
-                                            ramasQuizResults.find((k) => k.key === seletedWildOption.key)?.animalRelatives.map((text, idx) => (
-                                                <Text key={idx} style={wildStyles.finishTextWhite}>  {`\u2022`}  {text}</Text>
-                                            ))
-                                        }
+                                        <View style={[wildStyles.finishTextContainer,
+                                            { backgroundColor: '#fff', width: 285, alignSelf: 'flex-end', zIndex: 10 }]}
+                                        >
+                                            <Text style={wildStyles.finishTextBlack}>
+                                                {ramasQuizResults.find((k) => k.key === seletedWildOption.key)?.comment}
+                                            </Text>
+                                        </View>
+
+                                        <Image
+                                            source={require('../WildRamasAssetsApp/wildRamasDecorGuide/WildQuizDeer.png')}
+                                            style={{
+                                                width: '100%',
+                                                height: 342,
+                                                resizeMode: 'contain',
+                                                marginRight: -50,
+                                                marginTop: -30
+                                            }}
+                                        />
                                     </View>
+                                )
+                            }
 
-                                    <View style={[wildStyles.finishTextContainer,
-                                        { backgroundColor: '#fff', width: 285, alignSelf: 'flex-end', zIndex: 10 }]}
-                                    >
-                                        <Text style={wildStyles.finishTextBlack}>
-                                            {ramasQuizResults.find((k) => k.key === seletedWildOption.key)?.comment}
-                                        </Text>
-                                    </View>
+                            <TouchableOpacity onPress={nextWildQuestion}>
+                                <Image
+                                    source={require('../WildRamasAssetsApp/wildRamasDecorGuide/wildQuizStartBtn.png')}
+                                    style={{
+                                        width: height * 0.13,
+                                        height: height * 0.13,
+                                        resizeMode: 'contain',                                    
+                                        zIndex: 10,
+                                        position: 'absolute',
+                                        bottom: height * -0.04,
+                                        alignSelf: 'center'
+                                    }}
+                                />
+                            </TouchableOpacity>
 
-                                    <Image
-                                        source={require('../WildRamasAssetsApp/wildRamasDecorGuide/WildQuizDeer.png')}
-                                        style={{
-                                            width: '100%',
-                                            height: 342,
-                                            resizeMode: 'contain',
-                                            marginRight: -50,
-                                            marginTop: -30
-                                        }}
-                                    />
-                                </View>
-                            )
-                        }
-
-                        <TouchableOpacity onPress={nextWildQuestion}>
-                            <Image
-                                source={require('../WildRamasAssetsApp/wildRamasDecorGuide/wildQuizStartBtn.png')}
-                                style={{
-                                    width: height * 0.13,
-                                    height: height * 0.13,
-                                    resizeMode: 'contain',                                    
-                                    zIndex: 10,
-                                    position: 'absolute',
-                                    bottom: height * -0.04,
-                                    alignSelf: 'center'
-                                }}
-                            />
-                        </TouchableOpacity>
-
+                            <View style={{height: 100}} />
+                        </ScrollView>
                     </View>
                 )
             }
@@ -337,7 +340,7 @@ const RamasQuiz = () => {
                                 source={require('../WildRamasAssetsApp/wildRamasDecorGuide/WildQuizDeer.png')}
                                 style={{
                                     width: '100%',
-                                    height: 342,
+                                    height: height * 0.35,
                                     resizeMode: 'contain',
                                     marginRight: -50,
                                     marginTop: -30
@@ -356,8 +359,8 @@ const RamasQuiz = () => {
 const wildStyles = StyleSheet.create({
 
     wildQuestion: {
-        fontSize: 35,
-        lineHeight: 38,
+        fontSize: height > 700 ? 35 : 28,
+        lineHeight: height > 700 ? 38 : 32,
         fontWeight: '900',
         color: '#fff',
         textAlign: 'center'
