@@ -1,3 +1,5 @@
+import { ImageBackground, View, Dimensions } from "react-native";
+
 import WildLayout from "./WildLayout";
 import WildAnimation from "../RamasComponentsApp/WildAnimation";
 import WildHome from "../RamasComponentsApp/WildHome";
@@ -11,6 +13,8 @@ import CreateWildJournal from "../RamasComponentsApp/CreateWildJournal";
 import WildJournalDetails from "../RamasComponentsApp/WildJournalDetails";
 import RamasGuiz from "../RamasComponentsApp/RamasGuiz";
 import WildSettings from "../RamasComponentsApp/WildSettings";
+
+const { height } = Dimensions.get('window');
 
 export const WildAnimationScreen = () => {
     return (
@@ -82,7 +86,18 @@ export const WildJournalDetailsScreenGuide = ({ route }) => {
 
 export const RamasGuizScreenGuide = () => {
     return (
-        <WildLayout children={<RamasGuiz />} wildGuideNavi />
+        <ImageBackground
+            source={require('../WildRamasAssetsApp/wildRamasDecorGuide/ramasQuizBackground.png')}
+            style={{ flex: 1 }}
+        >
+            <View style={{
+                width: '100%',
+                height: '100%',
+                paddingTop: height * 0.08
+            }}>
+                <RamasGuiz />
+            </View>
+        </ImageBackground>
     )
 };
 
