@@ -1,9 +1,9 @@
 import { View, Image, Text, TouchableOpacity, StyleSheet } from "react-native"
-import guideNavigation from "../GuideConstantsApp/guideNavigation";
+import guideApp from "../GuideCnstApp/guideApp";
 import React, { useState, useEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
 
-const GuideNavigation = () => {
+const AppGuide = () => {
     const navigation = useNavigation();
     const [wildScreenCurrent, setWildScreenCurrent] = useState('WildHomeScreenGuide');  
 
@@ -23,7 +23,7 @@ const GuideNavigation = () => {
     return (
         <View style={styles.wildGuidNavi}>
             {
-                guideNavigation.map((wildScreen, index) => (
+                guideApp.map((wildScreen, index) => (
                     <TouchableOpacity
                         key={index}
                         onPress={() => {
@@ -86,4 +86,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default GuideNavigation;
+export default AppGuide;

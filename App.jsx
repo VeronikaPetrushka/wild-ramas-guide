@@ -15,7 +15,7 @@ import {
     WildJournalDetailsScreenGuide,
     RamasGuizScreenGuide,
     WildSettingsScreenGuide
-} from './WildRamasAppSource/WildHelpersApp/RamasScreensGuide';
+} from './WildRamasSourceApp/WildHelpersApp/RamasScreensGuide';
 
 enableScreens();
 

@@ -1,6 +1,6 @@
 import { View, Text, Image, TouchableOpacity, ScrollView, StyleSheet, Dimensions } from "react-native";
 import { useNavigation } from '@react-navigation/native';
-import wildDeersInfo from '../GuideConstantsApp/wildDeersInfo';
+import wildDeersInfo from '../GuideCnstApp/wildDeersInfo';
 
 const { height } = Dimensions.get('window');
  

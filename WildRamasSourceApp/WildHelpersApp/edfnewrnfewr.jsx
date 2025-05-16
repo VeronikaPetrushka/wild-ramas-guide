@@ -1,9 +1,9 @@
 import { View, Dimensions, StyleSheet } from "react-native";
-import GuideNavigation from "./GuideNavigation";
+import AppGuide from "./AppGuide";
 
 const { height } = Dimensions.get('window');
 
-const WildLayout = ({ children, wildGuideNavi }) => {
+const WildLayoutGuide = ({ children, wildGuideNavi }) => {
     return (
         <View style={layout.container}>
 
@@ -16,7 +16,7 @@ const WildLayout = ({ children, wildGuideNavi }) => {
                 wildGuideNavi && (
                     <View
                         style={layout.wildNavi}>
-                        <GuideNavigation />
+                        <AppGuide />
                     </View>
                 )
             }
@@ -49,4 +49,4 @@ const layout = StyleSheet.create({
 
 });
 
-export default WildLayout;
+export default WildLayoutGuide;

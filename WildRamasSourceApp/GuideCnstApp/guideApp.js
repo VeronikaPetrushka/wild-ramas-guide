@@ -1,11 +1,11 @@
-const guideNavigation = [
+const guideApp = [
     {
         guideScreen: 'WildHomeScreenGuide',
         wildImage: require('../WildRamasAssetsApp/guideNavigation/home.png'),
         wildName: 'Home'
     },
     {
-        guideScreen: 'RamasNotesScreenGuide',
+        guideScreen: 'RamasNotesGuide',
         wildImage: require('../WildRamasAssetsApp/guideNavigation/notes.png'),
         wildName: 'Notes'
     },
@@ -20,10 +20,10 @@ const guideNavigation = [
         wildName: 'Quiz'
     },
     {
-        guideScreen: 'WildSettingsScreenGuide',
+        guideScreen: 'WildSettingsGuide',
         wildImage: require('../WildRamasAssetsApp/guideNavigation/settings.png'),
         wildName: 'Settings'
     }
 ];
 
-export default guideNavigation;
+export default guideApp;
