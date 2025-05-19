@@ -1,5 +1,5 @@
 import { View, Image, Text, TouchableOpacity, StyleSheet } from "react-native"
-import guideApp from "../GuideCnstApp/guideApp";
+import guideApp from "../ewmfdpewmvcpow/guideApp";
 import React, { useState, useEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
 

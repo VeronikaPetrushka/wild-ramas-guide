@@ -5,7 +5,7 @@ const guideApp = [
         wildName: 'Home'
     },
     {
-        guideScreen: 'RamasNotesGuide',
+        guideScreen: 'RamasNotesScreenGuide',
         wildImage: require('../WildRamasAssetsApp/guideNavigation/notes.png'),
         wildName: 'Notes'
     },
@@ -20,7 +20,7 @@ const guideApp = [
         wildName: 'Quiz'
     },
     {
-        guideScreen: 'WildSettingsGuide',
+        guideScreen: 'WildSettingsScreenGuide',
         wildImage: require('../WildRamasAssetsApp/guideNavigation/settings.png'),
         wildName: 'Settings'
     }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, Image, TouchableOpacity, ScrollView, StyleSheet, Alert } from "react-native";
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import wildForestNotes from '../GuideCnstApp/wildForestNotes';
+import wildForestNotes from '../ewmfdpewmvcpow/wildForestNotes';
 import { useNavigation } from '@react-navigation/native';
 
 const RamasNotes = () => {

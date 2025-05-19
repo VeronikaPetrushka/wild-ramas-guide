@@ -1,18 +1,18 @@
 import { ImageBackground, View, Dimensions } from "react-native";
-import WildLayoutGuide from "./edfnewrnfewr";
+import Edfnewrnfewr from "./edfnewrnfewr";
 import imports from "./imports";
 
 const { height } = Dimensions.get('window');
 
 export const WildAnimationScreen = () => {
     return (
-        <WildLayoutGuide children={<imports.WildAnimation />} />
+        <Edfnewrnfewr children={<imports.WildAnimation />} />
     )
 };
 
 export const WildHomeScreenGuide = () => {
     return (
-        <WildLayoutGuide children={<imports.WildHome />} wildGuideNavi />
+        <Edfnewrnfewr children={<imports.WildHome />} wildGuideNavi />
     )
 };
 
@@ -20,25 +20,25 @@ export const WildDeerDetailsScreenGuide = ({ route }) => {
     const { deer } = route.params;
 
     return (
-        <WildLayoutGuide children={<imports.WildDeerDetails deer={deer} />} />
+        <Edfnewrnfewr children={<imports.WildDeerDetails deer={deer} />} />
     )
 };
 
 export const WildHomeStudiedScreenGuide = () => {
     return (
-        <WildLayoutGuide children={<imports.WildHomeStudied />} />
+        <Edfnewrnfewr children={<imports.WildHomeStudied />} />
     )
 };
 
 export const RamasNotesScreenGuide = () => {
     return (
-        <WildLayoutGuide children={<imports.RamasNotes />} wildGuideNavi />
+        <Edfnewrnfewr children={<imports.RamasNotes />} wildGuideNavi />
     )
 };
 
 export const RamasDictionaryScreenGuide = () => {
     return (
-        <WildLayoutGuide children={<imports.RamasDictionary />} />
+        <Edfnewrnfewr children={<imports.RamasDictionary />} />
     )
 };
 
@@ -46,13 +46,13 @@ export const RamasNoteDetailsScreenGuide = ({ route }) => {
     const { note } = route.params;
 
     return (
-        <WildLayoutGuide children={<imports.RamasNoteDetails note={note} />} />
+        <Edfnewrnfewr children={<imports.RamasNoteDetails note={note} />} />
     )
 };
 
 export const WildJournalScreenGuide = () => {
     return (
-        <WildLayoutGuide children={<imports.WildJournal />} wildGuideNavi />
+        <Edfnewrnfewr children={<imports.WildJournal />} wildGuideNavi />
     )
 };
 
@@ -60,7 +60,7 @@ export const CreateWildJournalScreenGuide = ({ route }) => {
     const { journal } = route.params || {};
 
     return (
-        <WildLayoutGuide children={<imports.CreateWildJournal journal={journal} />} />
+        <Edfnewrnfewr children={<imports.CreateWildJournal journal={journal} />} />
     )
 };
 
@@ -68,7 +68,7 @@ export const WildJournalDetailsScreenGuide = ({ route }) => {
     const { journal } = route.params;
 
     return (
-        <WildLayoutGuide children={<imports.WildJournalDetails journal={journal} />} />
+        <Edfnewrnfewr children={<imports.WildJournalDetails journal={journal} />} />
     )
 };
 
@@ -91,6 +91,6 @@ export const RamasGuizScreenGuide = () => {
 
 export const WildSettingsScreenGuide = () => {
     return (
-        <WildLayoutGuide children={<imports.WildSettings />} wildGuideNavi />
+        <Edfnewrnfewr children={<imports.WildSettings />} wildGuideNavi />
     )
 };

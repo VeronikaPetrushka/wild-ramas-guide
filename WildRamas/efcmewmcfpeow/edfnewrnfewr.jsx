@@ -3,7 +3,7 @@ import AppGuide from "./AppGuide";
 
 const { height } = Dimensions.get('window');
 
-const WildLayoutGuide = ({ children, wildGuideNavi }) => {
+const Edfnewrnfewr = ({ children, wildGuideNavi }) => {
     return (
         <View style={layout.container}>
 
@@ -29,7 +29,7 @@ const layout = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: '#000'
+        backgroundColor: '#395e2e'
     },
 
     wildScreen: {
@@ -49,4 +49,4 @@ const layout = StyleSheet.create({
 
 });
 
-export default WildLayoutGuide;
+export default Edfnewrnfewr;

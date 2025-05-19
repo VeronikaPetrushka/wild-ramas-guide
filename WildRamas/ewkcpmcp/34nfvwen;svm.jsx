@@ -1,6 +1,6 @@
 import { View, Text, Image, TouchableOpacity, ScrollView, StyleSheet, Dimensions } from "react-native";
 import { useNavigation } from '@react-navigation/native';
-import wildDeersInfo from '../GuideCnstApp/wildDeersInfo';
+import wildDeersInfo from '../ewmfdpewmvcpow/wildDeersInfo';
 
 const { height } = Dimensions.get('window');
  
@@ -124,7 +124,7 @@ const wildStyles = StyleSheet.create({
         resizeMode: 'contain',
         position: 'absolute',
         bottom: 30,
-        right: -50
+        right: -80
     }
 
 });

@@ -99,7 +99,7 @@ const wildStyles = StyleSheet.create({
         resizeMode: 'contain',
         position: 'absolute',
         bottom: 30,
-        right: -50
+        right: -80
     }
 
 });

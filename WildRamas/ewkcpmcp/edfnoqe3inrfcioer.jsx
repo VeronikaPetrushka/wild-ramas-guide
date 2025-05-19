@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, Image, TouchableOpacity, Dimensions, StyleSheet, ScrollView } from "react-native";
-import GuideNavigation from '../WildHelpersApp/AppGuide';
-import { ramasQuizInfo, ramasQuizResults } from '../GuideCnstApp/ramasQuizInfo';
+import GuideNavigation from '../efcmewmcfpeow/AppGuide';
+import { ramasQuizInfo, ramasQuizResults } from '../ewmfdpewmvcpow/ramasQuizInfo';
 
 const { height } = Dimensions.get('window');
 
